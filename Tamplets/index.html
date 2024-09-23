@@ -1,0 +1,16 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Relay Control</title>
+</head>
+<body>
+    <h1>Relay Control</h1>
+    <h2>Bulb is {{ "ON" if state == 1 else "OFF" }}</h2>
+    <form action="{{ url_for('toggle') }}" method="post">
+        <button type="submit">{{ "Turn Off" if state == 1 else "Turn On" }}</button>
+    </form>
+    <a href="{{ url_for('shutdown') }}">Shutdown</a>
+</body>
+</html>
